@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@700;800;900&family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-neo-bg: #F5F0E8;
+  --color-neo-yellow: #F0E040;
+  --color-neo-red: #FF4D4D;
+  --color-neo-dark: #1A1A1A;
+  --color-neo-card: #FFFFFF;
+  --font-display: "Syne", sans-serif;
+  --font-mono: "DM Mono", monospace;
+  --font-body: "Inter", sans-serif;
+  --font-space: "Space Grotesk", sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #F5F0E8;
+  border-left: 3px solid #1A1A1A;
+}
+::-webkit-scrollbar-thumb {
+  background: #F0E040;
+  border: 3px solid #1A1A1A;
+}
+
+/* Custom Selection styling */
+::selection {
+  background-color: #FF4D4D;
+  color: #FFFFFF;
+}
+
+/* Global Reset & Base Styles */
+body {
+  background-color: #F5F0E8;
+  background-image: 
+    linear-gradient(to right, rgba(26, 26, 26, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(26, 26, 26, 0.05) 1px, transparent 1px);
+  background-size: 50px 50px;
+  color: #1A1A1A;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+p {
+  line-height: 1.65;
+  letter-spacing: -0.005em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Syne", sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+/* Neo-Brutalist Utilities */
+@utility neo-border {
+  border: 3px solid #1A1A1A;
+}
+
+@utility neo-shadow {
+  box-shadow: 5px 5px 0px #1A1A1A;
+}
+
+@utility neo-shadow-hover {
+  box-shadow: 8px 8px 0px #1A1A1A;
+}
+
+@utility neo-card {
+  border: 3px solid #1A1A1A;
+  box-shadow: 5px 5px 0px #1A1A1A;
+  background-color: #FFFFFF;
+  border-radius: 0px;
+}
+
+@utility neo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 3px solid #1A1A1A;
+  box-shadow: 5px 5px 0px #1A1A1A;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@utility neo-btn-primary {
+  background-color: #F0E040;
+  color: #1A1A1A;
+}
+
+@utility neo-btn-secondary {
+  background-color: transparent;
+  color: #1A1A1A;
+}
+
+/* Mono font override — tighter tracking for code snippets */
+.font-mono {
+  letter-spacing: -0.02em;
+}
+
+/* GSAP Section Transition Overlay */
+#gsap-section-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0);
+  background: #1A1A1A;
+}
+
+#gsap-section-overlay-stripe {
+  position: fixed;
+  inset: 0;
+  z-index: 9998;
+  pointer-events: none;
+  clip-path: inset(0 100% 0 0);
+  background: #F0E040;
+}
+
+/* Hide standard cursor for the custom cursor plugin if not touchscreen */
+@media (pointer: fine) {
+  .custom-cursor-active {
+    cursor: none;
+  }
+  .custom-cursor-active a, 
+  .custom-cursor-active button, 
+  .custom-cursor-active [role="button"] {
+    cursor: none;
+  }
+}

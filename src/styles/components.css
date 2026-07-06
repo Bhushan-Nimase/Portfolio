@@ -1,0 +1,229 @@
+:root {
+  --bg: #F5F0E8;
+  --fg: #1A1A1A;
+  --accent: #F0E040; /* Neo-Brutalist Yellow */
+  --font-mono: "DM Mono", monospace;
+  --font-serif: "Syne", sans-serif;
+  --font-sans: "Inter", sans-serif;
+}
+
+/* ─── About Section (rebuilt) ───────────────────────────────────────────── */
+#about {
+  scroll-margin-top: 80px;
+}
+
+/* ─── Skills Section ────────────────────────────────────────────────────── */
+.skills-marquee-container {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-bottom: 64px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  overflow-x: hidden;
+}
+
+.tool-tile {
+  background-color: var(--bg, #F5F0E8);
+  border: 2px solid var(--fg, #1A1A1A);
+  box-shadow: 3px 3px 0px var(--fg, #1A1A1A);
+  width: 80px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px;
+  font-family: var(--font-mono, monospace);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.tool-tile:hover {
+  background-color: var(--accent, #D95D39) !important;
+  border-color: var(--fg, #1A1A1A) !important;
+  color: var(--bg, #F5F0E8) !important;
+  box-shadow: 5px 5px 0px var(--fg, #1A1A1A) !important;
+}
+
+.tool-tile img {
+  transition: filter 0.2s ease;
+}
+
+.tool-tile:hover img {
+  filter: brightness(0) invert(1);
+}
+
+/* ─── Projects Section ─────────────────────────────────────────────────── */
+.projects-section {
+  padding: 5rem 2rem;
+  background: var(--bg, #fff);
+  scroll-margin-top: 80px;
+}
+
+.projects-container {
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.projects-row1 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.projects-row2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 200px;
+  gap: 1rem;
+}
+
+.project-card-featured {
+  display: grid;
+  grid-template-columns: 1fr 220px;
+  border: 1.5px solid var(--fg, #111);
+  background: var(--bg, #fff);
+  transition: all 0.25s ease;
+  overflow: hidden;
+  margin-bottom: 1rem;
+}
+
+.project-card-featured-right {
+  background: var(--accent, #D95D39);
+  border-left: 1.5px solid var(--fg, #111);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.project-card-tall {
+  border: 1.5px solid var(--fg, #111);
+  background: var(--bg, #fff);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.project-card-compact {
+  border: 1.5px solid var(--fg, #111);
+  background: var(--bg, #fff);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: all 0.25s ease;
+}
+
+.project-card-cta {
+  border: 1.5px solid var(--fg, #111);
+  background: var(--accent, #D95D39);
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+@media (max-width: 900px) {
+  .projects-row1 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+  .projects-row2 {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card-featured {
+    grid-template-columns: 1fr !important;
+  }
+  .project-card-featured-right {
+    border-left: none !important;
+    border-top: 1.5px solid var(--fg, #111) !important;
+    padding: 2rem !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .projects-row1, .projects-row2 {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── Education Section ───────────────────────────────────────────────── */
+.education-section {
+  padding: 8rem 2rem;
+  background: var(--bg, #fff);
+  scroll-margin-top: 80px;
+}
+
+.edu-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.education-card-watermark {
+  position: absolute;
+  right: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-family: var(--font-serif, serif);
+  font-size: 5rem;
+  font-weight: 900;
+  line-height: 1;
+  user-select: none;
+  transition: color 0.25s;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .edu-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .education-card-watermark {
+    font-size: 3.5rem !important;
+    opacity: 0.03 !important;
+  }
+}
+
+/* ─── Contact Section ─────────────────────────────────────────────────── */
+.contact-section {
+  padding: 8rem 2rem;
+  scroll-margin-top: 80px;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.contact-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 3rem !important;
+  }
+  .contact-form-row {
+    grid-template-columns: 1fr !important;
+  }
+}
